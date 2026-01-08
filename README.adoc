@@ -1,0 +1,136 @@
+= glambot: Repository Presentation Quality Enforcer
+:toc: macro
+:toc-title:
+:toclevels: 3
+:icons: font
+:source-highlighter: pygments
+:sectnums:
+
+toc::[]
+
+== Overview
+`glambot` is a **quality-enforcement bot** in the https://gitlab.com/hyperpolymath[Hyperpolymath] ecosystem, specializing in **presentation quality** for both humans and machines. It ensures repositories meet high standards for visual polish, accessibility (WCAG), SEO, and machine-readability (e.g., for AI/bots).
+
+`glambot` is part of the https://gitlab.com/hyperpolymath/gitbot-fleet[Gitbot Fleet], a suite of bots dedicated to repository health and compliance.
+
+=== Key Features
+- **Visual Polish**: Enforces consistent styling, formatting, and branding.
+- **Accessibility**: Validates compliance with WCAG guidelines.
+- **SEO Optimization**: Ensures repositories are discoverable and well-documented.
+- **Machine-Readability**: Optimizes content for AI, bots, and automated tools.
+- **Automation**: Integrates with CI/CD pipelines for real-time feedback and fixes.
+
+== Architecture
+`glambot` operates as a standalone bot within the Gitbot Fleet, focusing on presentation and readability:
+
+[source]
+----
+                     GITBOT FLEET
+   ┌──────────────────────────────────────────┐
+   │                                          │
+   │  ┌─────────┐  ┌─────────┐  ┌─────────┐  │
+   │  │ rhodibot│  │echidna  │  │  oikos  │  │
+   │  │(RSR     │  │(verify) │  │(eco/    │  │
+   │  │ struct) │  │         │  │ econ)   │  │
+   │  └────┬────┘  └────┬────┘  └────┬────┘  │
+   │       │            │            │        │
+   │       ▼            ▼            ▼        │
+   │  ┌─────────────────────────────────────┐ │
+   │  │        SHARED CONTEXT LAYER         │ │
+   │  └─────────────────────────────────────┘ │
+   │       │            │            │        │
+   │       ▼            ▼            ▼        │
+   │  ┌─────────┐  ┌─────────┐  ┌─────────┐  │
+   │  │ glambot │  │ seambot │  │finishing│  │
+   │  │(present │  │(integr) │  │  -bot   │  │
+   │  │ ation)  │  │         │  │(release)│  │
+   │  └─────────┘  └─────────┘  └─────────┘  │
+   │                                          │
+   └──────────────────────────────────────────┘
+----
+
+`glambot` is a **satellite** of `git-dispatcher`, the central coordination hub for all Git automation in the Hyperpolymath ecosystem.
+
+== Use Cases
+- **Repository Branding**: Enforces consistent visual identity (e.g., READMEs, logos, color schemes).
+- **Accessibility Audits**: Automatically checks for WCAG compliance in documentation and UI.
+- **SEO Audits**: Validates metadata, keywords, and discoverability.
+- **Machine-Readability**: Ensures structured data (e.g., schema.org, OpenGraph) is present and valid.
+- **Automated Fixes**: Applies formatting, alt-text, and semantic HTML fixes via CI/CD.
+
+== Installation
+`glambot` is designed to run as part of your CI/CD pipeline. To integrate:
+
+1. **Add to your repository**:
+   [source,bash]
+   -----
+   git submodule add https://gitlab.com/hyperpolymath/glambot.git .glambot
+   -----
+
+2. **Configure**:
+   - Add a `.glambot/config.yml` file to specify rules and exceptions.
+   - Example:
+     [source,yaml]
+     -----
+     accessibility:
+       wcag_level: AA
+     seo:
+       enforce_meta_tags: true
+     formatting:
+       markdown_linter: true
+       line_length: 80
+     -----
+
+3. **Automate with Just**:
+   Include `glambot` tasks in your `justfile`:
+   [source]
+   -----
+   glambot-audit:
+     @cd .glambot && just audit
+
+   glambot-fix:
+     @cd .glambot && just fix
+   -----
+
+== Usage
+Run `glambot` manually or as part of your pipeline:
+
+[source,bash]
+----
+# Audit repository
+just glambot-audit
+
+# Apply automated fixes
+just glambot-fix
+----
+
+== Configuration
+`glambot` supports customization via `.glambot/config.yml`. See link:CONFIGURATION.adoc[Configuration Guide] for details.
+
+== Documentation
+- link:ROADMAP.adoc[Project Roadmap]
+- link:CONFIGURATION.adoc[Configuration Guide]
+- link:API.adoc[API Reference]
+- link:licences/[Licenses]
+
+== Automation
+All tasks are managed via `just`. Run `just --list` for available commands.
+
+== License
+This project is licensed under:
+- link:licences/AGPL-3.0-or-later.txt[AGPL-3.0-or-later]
+- link:licences/MIT.txt[MIT]
+- link:licences/Palimpsest-v0.4.txt[Palimpsest v0.4]
+
+== Community
+- link:CODE_OF_CONDUCT.adoc[Code of Conduct]
+- link:GOVERNANCE.adoc[Governance]
+- link:FUNDING.adoc[Funding & Sponsorship]
+
+== Relationship to Gitbot Fleet
+`glambot` is one of several bots in the https://gitlab.com/hyperpolymath/gitbot-fleet[Gitbot Fleet]. For broader repository health checks, combine with:
+- `rhodibot` (structural compliance)
+- `echidnabot` (mathematical/statistical verification)
+- `oikos` (ecological/economic standards)
+- `seambot` (integration health)
+- `finishing-bot` (release readiness)
