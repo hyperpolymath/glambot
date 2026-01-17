@@ -1,0 +1,11 @@
+/var/home/hyper/repos/glambot/target/debug/deps/base64_simd-6f605a10116c8fd8.d: /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/lib.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/error.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/spec.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/decode.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/encode.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/forgiving.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/multiversion.rs
+
+/var/home/hyper/repos/glambot/target/debug/deps/libbase64_simd-6f605a10116c8fd8.rmeta: /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/lib.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/error.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/spec.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/decode.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/encode.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/forgiving.rs /home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/multiversion.rs
+
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/lib.rs:
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/error.rs:
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/spec.rs:
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/decode.rs:
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/encode.rs:
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/forgiving.rs:
+/home/hyper/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/base64-simd-0.7.0/src/multiversion.rs:
